@@ -1,0 +1,21 @@
+version: '3.1'
+
+services:
+  mariadb:
+    image: mariadb
+    ports:
+      - 3306:3306
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678
+      MYSQL_DATABASE: zupimperativo
+      MYSQL_USER: mateuspada
+      MYSQL_PASSWORD: 12345678
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
+
+#docker run -it --network reactive-quarkus-pock_default --rm mariadb mysql -hreactive-quarkus-pock_mariadb_1 -uroot -p12345678
